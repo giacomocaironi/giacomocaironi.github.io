@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+
+</head>
+
+<body>
+  <nav class="fixed-top navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
+    <div class="container flex-row">
+      <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-2 mr-auto">
+          {% for title, link in MENUITEMS %}
+          <li class="nav-item"><a class="nav-link" href="{{ link }}">{{ title }}</a></li>
+          {% endfor %}
+          {% if DISPLAY_PAGES_ON_MENU -%}
+          {% if not PAGES_SORT_ATTRIBUTE -%}
+          {% set PAGES_SORT_ATTRIBUTE = 'title' %}
+          {% endif %}
+          {% for pg in pages | sort(attribute=PAGES_SORT_ATTRIBUTE) %}
+          {% if 'http://' in pg.url -%}
+          <li class="nav-item"><a class="nav-link" href="{{ pg.url }}">{{ pg.title }}</a></li>
+          {% else %}
+          <li{% if pg == page %} class="active"{% endif %} class="nav-item"><a class="nav-link" href="{{ SITEURL }}/{{ pg.url }}">{{ pg.title }}</a></li>
+          {% endif %}
+          {% endfor %}
+          {% endif %}
+          {% if DISPLAY_CATEGORIES_ON_MENU -%}
+          {% for cat, null in categories %}
+          <li{% if cat == category %} class="active"{% endif %} class="nav-item"><a class="nav-link" href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+          {% endfor %}
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container main-content">
+    <div class="row">
+      <div class="col-md-11 col-lg-8">
+        {% block content %}
+        {% endblock %}
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="card tag-cloud">
+            <h4>Tags</h4>
+            {%- for tag, articles in tags|sort %}
+                <span><a class="" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</span>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+  </div>
+
+  {% include 'disqus_script.html' %}
+
+  <footer class="footer bg-primary">
+    <div class="container">
+      <div class="row">
+        {% if LINKS %}
+        <div class="blogroll col-12 col-lg-6">
+          <h2>blogroll</h2>
+          <ul>
+            {% for name, link in LINKS %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div><!-- /.blogroll -->
+        {% endif %}
+        {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+        <div class="social col-12 col-lg-6">
+          <h2>social</h2>
+          <ul>
+            {% if FEED_ALL_ATOM %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate">atom feed</a></li>
+            {% endif %}
+            {% if FEED_ALL_RSS %}
+            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate">rss feed</a></li>
+            {% endif %}
+
+            {% for name, link in SOCIAL %}
+            <li><a href="{{ link }}">{{ name }}</a></li>
+            {% endfor %}
+          </ul>
+        </div><!-- /.social -->
+        {% endif %}
+      </div>
+    </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </div>
+</body>
+</html>
