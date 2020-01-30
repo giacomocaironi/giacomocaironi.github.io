@@ -6,10 +6,10 @@ AUTHOR = "Giacomo Caironi"
 SITENAME = "Giacomo Caironi"
 SITEURL = ""
 
-THEME = "./bootsrap-dark"
+THEME = "./bootstrap-dark"
 
 PATH = "content"
-OUTPUT_PATH = ""
+OUTPUT_PATH = "output"
 
 TIMEZONE = "Europe/Rome"
 
