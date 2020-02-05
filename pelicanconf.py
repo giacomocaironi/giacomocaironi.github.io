@@ -6,7 +6,7 @@ AUTHOR = "Giacomo Caironi"
 SITENAME = "Giacomo Caironi"
 SITEURL = ""
 
-THEME = "./bootstrap-dark"
+THEME = "./Bootstrap-dark"
 
 PATH = "content"
 OUTPUT_PATH = "output"
