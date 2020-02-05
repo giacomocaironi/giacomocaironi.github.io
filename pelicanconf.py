@@ -24,8 +24,14 @@ ARTICLE_SAVE_AS = "{slug}.html"
 TAG_URL = "tag/{slug}.html"
 TAG_SAVE_AS = "tag/{slug}.html"
 
-# DIRECT_TEMPLATES = ['index', 'authors', 'categories', 'tags', 'archives']
-DIRECT_TEMPLATES = ["index", "categories", "tags"]
+INDEX_SAVE_AS = "index.html"
+TAGS_SAVE_AS = "tags.html"
+CATEGORIES_SAVE_AS = "categories.html"
+AUTHORS_SAVE_AS = "authors.html"
+ARCHIVES_SAVE_AS = "archives.html"
+
+# DIRECT_TEMPLATES = ["index", "authors", "categories", "tags", "archives"]
+# DIRECT_TEMPLATES = ["index", "categories", "tags"]
 
 DISPLAY_CATEGORIES_ON_MENU = False
 
