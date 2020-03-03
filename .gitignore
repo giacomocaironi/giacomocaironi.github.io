@@ -2,3 +2,4 @@
 output
 .*-version
 .jekyll-cache
+_site/
