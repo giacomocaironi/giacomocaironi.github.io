@@ -3,8 +3,11 @@
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
+    {% feed_meta %}
+    {% seo %}
   </head>
   <body>
+    {% include navbar.html %}
     {{ content }}
   </body>
 </html>
