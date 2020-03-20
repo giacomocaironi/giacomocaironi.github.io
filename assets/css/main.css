@@ -1,0 +1,13 @@
+.main-content{
+  margin-top: 80px;
+}
+
+.footer{
+  margin-top: auto;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}

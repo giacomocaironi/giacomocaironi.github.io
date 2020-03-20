@@ -10,26 +10,13 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/css/{{ CSS_FILE }}" />
+  <link rel="stylesheet" href="/assets/css/main.css">
 
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary" id="navbar">
-    <div class="container flex-row">
-      <a class="navbar-brand" href="{{ SITEURL }}/">{{ SITENAME }}{% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-2 mr-auto">
-          {% for item in site.data.navigation %}
-          <li class="nav-item"><a class="nav-link" href="{{ item.link }}">{{ item.name }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </nav>
+
+  {% include navbar.html %}
 
   <div class="container main-content">
     <div class="row">
@@ -37,12 +24,7 @@
     </div>
   </div>
 
-  <footer class="footer bg-primary">
-    <div class="container">
-      <div class="row">
-      </div>
-    </div>
-  </footer>
+  {% include footer.html %}
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
