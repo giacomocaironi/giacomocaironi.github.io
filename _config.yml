@@ -11,6 +11,11 @@ defaults:
       layout: "author"
   - scope:
       path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
       type: "projects"
     values:
       layout: "project"
@@ -23,6 +28,7 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
+  - jekyll-paginate
 
 feed:
   collections:

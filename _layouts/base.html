@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <title>{{ page.title }}</title>
+  <title>{{site.name}} - {{ page.title }}</title>
   {% feed_meta %}
   {% seo %}
 
@@ -16,15 +16,7 @@
 
 <body>
 
-  {% include navbar.html %}
-
-  <div class="container main-content">
-    <div class="row">
-      {{ content }}
-    </div>
-  </div>
-
-  {% include footer.html %}
+  {{ content }}
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
