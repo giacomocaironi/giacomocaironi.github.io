@@ -1,21 +1,31 @@
 ---
 layout: minimal
 title: Blog
+pagination:
+  enabled: true
+  per_page: 5
+  sort_field: 'date'
+  sort_reverse: true
+  indexpage: 'blog/index'
+  permalink: 'blog/:num/'
+  title: ':title - page :num'
+  offset: 1
 ---
-<h1>Latest Posts</h1>
 
-<div class="jumbotron p-4 p-md-5 main-post rounded bg-dark">
+<div class="jumbotron p-4 p-md-3 main-post rounded bg-dark">
   <div class="col-md-6 px-0">
+    <h3>Latest post</h3>
     <h1><a href="{{ site.posts[0].url }}">{{ site.posts[0].title }}</a></h1>
     <p>{{ site.posts[0].excerpt }}</p>
   </div>
 </div>
 
-
 <div class="row">
-  <div class="col-md-12 col-lg-8">
+  <div class="col-md-12 col-lg-9">
+    <h2>Older posts</h2>
+    <hr>
     <ul class='post-list'>
-      {% for post in site.posts offset:1 %}
+      {% for post in paginator.posts %}
         <li>
           <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
           <p>{{ post.excerpt }}</p>
@@ -24,3 +34,17 @@ title: Blog
     </ul>
   </div>
 </div>
+
+<nav class='blog-pagination'>
+  {% if paginator.previous_page %}
+    <a class='btn btn-outline-dark' href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% else %}
+    <a class='btn btn-outline-dark disabled' href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a class='btn btn-outline-dark' href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% else %}
+    <a class='btn btn-outline-dark disabled' href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
+  {% endif %}
+</nav>

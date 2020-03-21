@@ -29,3 +29,7 @@ a, a:hover{
   list-style-type: none;
   padding-left: 0px;
 }
+
+.blog-pagination .btn{
+  border-radius: 2rem;
+}

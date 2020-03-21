@@ -28,8 +28,14 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-seo-tag
-  - jekyll-paginate
+  - jekyll-paginate-v2
 
 feed:
   collections:
     - projects
+
+
+
+# permalink: /:year/:month/:title.html
+pagination:
+  enabled: true

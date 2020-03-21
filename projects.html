@@ -1,14 +1,15 @@
 ---
-layout: default
+layout: minimal
 title: Projects
 ---
-<h1>Latest Projects</h1>
-
-<ul>
+<h1>Projects</h1>
+<div class="row">
   {% for project in site.projects %}
-    <li>
-      <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
-      <p>{{ project.excerpt }}</p>
-    </li>
+    <div class="col-12 col-lg-4 col-md-6 mb-3 mt-3">
+      <div class="card p-3">
+        <h2><a href="{{ project.url }}">{{ project.title }}</a></h2>
+        <p>{{ project.excerpt }}</p>
+      </div>
+    </div>
   {% endfor %}
-</ul>
+</div>
