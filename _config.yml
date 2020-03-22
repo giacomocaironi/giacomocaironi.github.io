@@ -46,5 +46,5 @@ autopages:
   tags:
     layouts:
       - 'autopage_tag.html'
-    title: 'Posts tagged with :tag' # :tag is replaced by the tag name
+    title: 'Posts tagged :tag' # :tag is replaced by the tag name
     permalink: '/tags/:tag.html'
