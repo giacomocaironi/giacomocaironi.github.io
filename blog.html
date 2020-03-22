@@ -8,7 +8,6 @@ pagination:
   sort_reverse: true
   indexpage: 'blog/index'
   permalink: 'blog/:num/'
-  title: ':title - page :num'
   offset: 1
 ---
 
@@ -22,7 +21,11 @@ pagination:
 
 <div class="row">
   <div class="col-md-12 col-lg-9">
-    <h2>Older posts</h2>
+    {% if paginator.page == 1 %}
+      <h2>Older posts</h2>
+    {% else %}
+      <h2>Older posts - page {{paginator.page}}</h2>
+    {% endif %}
     <hr>
     <ul class='post-list'>
       {% for post in paginator.posts %}

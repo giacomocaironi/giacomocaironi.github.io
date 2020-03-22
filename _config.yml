@@ -3,14 +3,14 @@ collections:
   projects:
     output: true
   tags:
-    output: true
+    output: false
 
 defaults:
   - scope:
       path: ""
       type: "tags"
     values:
-      layout: "tag"
+      layout: "autopage_tag"
   - scope:
       path: ""
       type: "posts"
@@ -36,8 +36,15 @@ feed:
   collections:
     - projects
 
-
-
-# permalink: /:year/:month/:title.html
 pagination:
   enabled: true
+  per_page: 1
+
+autopages:
+  enabled: true
+
+  tags:
+    layouts:
+      - 'autopage_tag.html'
+    title: 'Posts tagged with :tag' # :tag is replaced by the tag name
+    permalink: '/tags/:tag.html'

@@ -1,21 +1,15 @@
 ---
 layout: minimal
-<!-- pagination:
+pagination:
   enabled: true
   per_page: 5
-  sort_field: 'date'
-  sort_reverse: true
-  indexpage: 'blog/index'
-  permalink: 'blog/:num/'
-  title: ':title - page :num'
-  offset: 1 -->
 ---
 <div class="row">
   <div class="col-md-12 col-lg-9">
-    <h1>Posts tagged {{page.name}}</h1>
+    <h1>{{page.title}}</h1>
     <hr>
     <ul class='post-list'>
-      {% assign filtered_posts = site.posts | where: 'tag', page.name %}
+      {% assign filtered_posts = paginator.posts %}
       {% for post in filtered_posts %}
         {% include post_front.html %}
       {% endfor %}
@@ -26,7 +20,7 @@ layout: minimal
   </div>
 </div>
 
-<!-- <nav class='blog-pagination'>
+<nav class='blog-pagination'>
   {% if paginator.previous_page %}
     <a class='btn btn-outline-dark' href="{{ paginator.previous_page_path | prepend: site.baseurl }}">Newer</a>
   {% else %}
@@ -38,4 +32,4 @@ layout: minimal
   {% else %}
     <a class='btn btn-outline-dark disabled' href="{{ paginator.next_page_path | prepend: site.baseurl }}">Older</a>
   {% endif %}
-</nav> -->
+</nav>
