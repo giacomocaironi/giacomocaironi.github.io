@@ -33,3 +33,17 @@ a, a:hover{
 .blog-pagination .btn{
   border-radius: 2rem;
 }
+
+.tags-list{
+  padding-left: 0px;
+  font-size: 125%;
+}
+
+.post-front{
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+hr{
+  border-top: 1px solid black;
+}
