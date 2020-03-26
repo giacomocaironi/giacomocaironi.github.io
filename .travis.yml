@@ -10,6 +10,7 @@ script:
 
 deploy:
   provider: pages
+  target_branch: master
   skip_cleanup: true
   github_token: $GH_TOKEN
   local_dir: _site
