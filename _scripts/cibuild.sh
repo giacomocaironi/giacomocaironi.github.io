@@ -17,7 +17,7 @@ mkdir _site
 git clone https://${GH_TOKEN}@github.com/giacomocaironi/giacomocaironi.github.io.git --branch master _site
 
 # build with Jekyll into "_site"
-bundle exec jekyll build
+python3 main.py build
 
 # push
 cd _site

@@ -1,0 +1,8 @@
+- name: Giacomo Caironi
+  link: index
+- name: About
+  link: about
+- name: Blog
+  link: blog_index
+- name: Projects
+  link: projects_index
