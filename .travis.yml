@@ -10,6 +10,6 @@ before_script:
 # Travis will run `bundle install` by default before running our script
 script:
   - ./_scripts/cibuild.sh
-  
+
 exclude: [vendor]
 sudo: false
