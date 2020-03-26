@@ -13,9 +13,6 @@ set -e
 rm -rf _site
 mkdir _site
 
-# clone remote repo to "_site"
-git clone https://${GH_TOKEN}@github.com/giacomocaironi/giacomocaironi.github.io.git --branch main
-
 # build with Jekyll into "_site"
 python3 main.py build
 
