@@ -1,5 +1,5 @@
 html{
-  font-size: 115%;
+  font-size: 125%;
 }
 
 .main-content{
@@ -32,4 +32,20 @@ a, a:hover{
 
 .blog-pagination .btn{
   border-radius: 2rem;
+}
+
+.align-center{
+  margin: auto;
+}
+
+.icon{
+  height: 30px;
+}
+
+.feed-icon{
+  width: 30px;
+}
+
+.github-icon{
+  width: 37px;
 }
