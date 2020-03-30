@@ -1,41 +1,153 @@
 html{
   font-size: 125%;
-}
-
-.main-content{
-  margin-top: 5rem;
-  margin-bottom: 2rem;
-}
-
-.footer{
-  margin-top: auto;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont,
+      “Segoe UI”, “Roboto”, “Oxygen”,
+      “Ubuntu”, “Cantarell”, “Fira Sans”,
+      “Droid Sans”, “Helvetica Neue”, sans-serif;
 }
 
 body{
+  margin: 0px;
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100%;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
 }
 
 a, a:hover{
   color: black;
 }
 
-.main-post, .main-post a{
-  color: #fff !important;
+.main-content{
+  margin-top: 5rem;
 }
 
-.post-list{
-  list-style-type: none;
-  padding-left: 0px;
+.container{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
-.blog-pagination .btn{
-  border-radius: 2rem;
+.container{
+  max-width: 1140px;
+}
+
+@media(min-width: 576px){
+.container{
+  max-width: 540px;
+}}
+
+@media(min-width: 768px){
+.container{
+  max-width: 720px;
+}}
+
+@media(min-width: 992px){
+.container{
+  max-width: 960px;
+}}
+
+.footer{
+  margin-top: auto;
+  padding: .5rem 1rem;
+}
+
+.flex{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.bg-main{
+  background-color: #343a40;
+}
+
+.nav-link{
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-link:hover{
+  /* color: rgba(255, 255, 255, 0.75); */
+  color: red;
+}
+
+.card{
+  border: 1px solid black;
+  border-radius: 1rem;
+}
+
+.rounded{
+  border-radius: 1rem;
+}
+
+.button{
+  display: inline-block;
+  border: 1px solid;
+  padding: .375rem .75rem;
+}
+
+a.button{
+  text-decoration: none;
+}
+
+.button.disabled{
+  opacity: 0.65;
+  background-color: transparent;
+}
+
+.button-dark:hover{
+  color: white;
+  background-color: #343a40;
+}
+
+.disabled:hover{
+  color: black;
+  background-color: white;
 }
 
 .align-center{
   margin: auto;
+}
+
+#tag-list{
+  margin-bottom: 1rem;
+  padding: 1rem;
+}
+
+#main-post{
+  color: #fff;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+#main-post a{
+  color: #fff;
+}
+
+#post-list{
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#blog-pagination .button{
+  border-radius: 2rem;
+  margin-bottom: 1rem;
 }
 
 .icon{
