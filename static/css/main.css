@@ -12,6 +12,10 @@
   margin: auto;
 }
 
+.nav-link.active{
+  color: white;
+}
+
 .nav-link:hover{
   color: rgba(255, 255, 255, 0.75);
   text-decoration: none;
