@@ -55,9 +55,10 @@
   color: #fff;
   padding: .5rem;
   padding-top: 1rem;
-  margin-right: -1rem;
-  margin-left: -1rem;
+  /* margin-right: -1rem; */
+  /* margin-left: -1rem; */
   margin-bottom: 2rem;
+  border-radius: 1rem;
 }
 
 #main-post a{
