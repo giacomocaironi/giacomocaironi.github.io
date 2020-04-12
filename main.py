@@ -3,17 +3,22 @@ from kart import miners, mappers
 
 kart = Kart()
 
-kart.miners.extend([miners.DefaultCollectionMiner("projects")])
+kart.miners = [
+    miners.DefaultPostMiner("posts"),
+    miners.DefaultCollectionMiner("tags"),
+    miners.DefaultCollectionMiner("projects"),
+    miners.DefaultDataMiner(),
+    miners.DefaultPageMiner(),
+]
 
-kart.mappers[0].base_url = "/blog"
-kart.mappers.extend(
-    [
-        mappers.DefaultCollectionMapper(
-            collection_name="projects", template="project.html"
-        ),
-        # mappers.ManualMapper([]),
-    ]
-)
+kart.mappers = [
+    mappers.DefaultBlogMapper(base_url="/blog"),
+    mappers.DefaultCollectionMapper(
+        collection_name="projects", template="project.html"
+    ),
+    mappers.DefaultPageMapper(),
+    mappers.DefaultFeedMapper(),
+]
 
 kart.config["name"] = "Giacomo Caironi"
 kart.config["base_url"] = "https://giacomocaironi.github.io"

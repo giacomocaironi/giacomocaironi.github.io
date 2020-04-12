@@ -8,7 +8,7 @@
 {% include "navbar.html" %}
 <div class='main-content'>
 
-  <h1 style="padding-left:25px">Latest post</h1>
+  <h1 style="text-align:center">Latest post</h1>
 
   <div class="bg-main" id='main-post'>
     <div class="col-12">
@@ -19,48 +19,46 @@
 
   <hr>
 
-<div id="projects-carousel" class="carousel slide carousel-fade" data-ride="carousel">
-  <ol class="carousel-indicators">
-    {% for i in range(site.projects|length) %}
-    <li data-target="#projects-carousel" data-slide-to="{{i}}" class="{%if i == 0%}active{%endif%}"></li>
-    {% endfor %}
-  </ol>
-  <div class="carousel-inner" role="listbox">
-    {% for project in site.projects %}
-    <div class="carousel-item {%if loop.index == 1%}active{%endif%}">
-      <div class="view">
-        <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20({{loop.index}}).jpg"
-          alt="Second slide">
-        <div class="mask rgba-black-light"></div>
+  <h1 style="text-align:center">Projects</h1>
+
+  <div id="projects-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      {% for i in range(site.projects|length) %}
+      <li data-target="#projects-carousel" data-slide-to="{{i}}" class="{%if i == 0%}active{%endif%}"></li>
+      {% endfor %}
+    </ol>
+      <div class="carousel-inner" role="listbox">
+          {% for project in site.projects %}
+          <div class="carousel-item {%if loop.index == 1%}active{%endif%}">
+            <div class="">
+              <a href="{{ url('projects', project.slug) }}"><h3 class="h3-responsive">{{project.name}}</h3></a>
+              <p>{{project.description}}</p>
+            </div>
+          </div>
+          {% endfor %}
       </div>
-      <div class="carousel-caption">
-        <a href="{{ url('projects', project.slug) }}"><h3 class="h3-responsive">{{project.name}}</h3></a>
-        <p>{{project.description}}</p>
-      </div>
-    </div>
-    {% endfor %}
+      <a class="carousel-control-prev" href="#projects-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#projects-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+      </a>
   </div>
-  <a class="carousel-control-prev" href="#projects-carousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#projects-carousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
 
   <hr>
 
   <div class="row">
     <div class="col-md-12 col-lg-6" style="text-align: center;">
-      {{ site.pages.about.content }}
+      <a href="{{ url('about') }}"><h1>About</h1></a>
     </div>
     <div class="col-md-12 col-lg-6" style="text-align: center;">
-      {{ site.pages.contact.content }}
+      <a href="{{ url('contact') }}"><h1>Contact</h1></a>
     </div>
   </div>
 
+  <hr>
 
 
 </div>
