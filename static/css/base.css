@@ -4,7 +4,7 @@
 
 html{
   height: 100%;
-  /* font-size: 125%; */
+  font-size: 115%;
 }
 
 body{
@@ -51,8 +51,8 @@ a, a:hover{
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   max-width: 1180px;
 }
 
@@ -197,10 +197,6 @@ a, a:hover{
   border-radius: 1rem;
   padding: 1rem;
   margin: 0.5rem;
-}
-
-.rounded{
-  border-radius: 1rem;
 }
 
 .button{
