@@ -2,8 +2,6 @@
   link: index
 - name: About
   link: about
-- name: Contact
-  link: contact
 - name: Blog
   link: blog_index
 - name: Projects

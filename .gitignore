@@ -1,5 +1,3 @@
-.DS_STORE
-output
-.*-version
-.jekyll-cache
+__pycache__
 _site/
+.*-version
