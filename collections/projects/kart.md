@@ -1,6 +1,7 @@
 ---
 name: Kart
 description: A very flexible static site generator written in python
+date: 2020-03-21
 ---
 Kart is a static site generator written in python. It was designed with flexibility in mind, because I felt like I wasn't able to get exactly what I wanted from the preveious static site generators I had tried.
 

@@ -1,5 +1,5 @@
 from kart import Kart
-from kart import miners, mappers
+from kart import miners, mappers, renderers
 
 kart = Kart()
 
@@ -18,6 +18,11 @@ kart.mappers = [
     ),
     mappers.DefaultPageMapper(),
     mappers.DefaultFeedMapper(),
+]
+
+kart.renderers = [
+    renderers.DefaultSiteRenderer(),
+    renderers.DefaultFeedRenderer(collections=["posts", "projects"]),
 ]
 
 kart.config["name"] = "Giacomo Caironi"
