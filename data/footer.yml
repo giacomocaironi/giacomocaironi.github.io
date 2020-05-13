@@ -6,3 +6,5 @@
   link: blog_index
 - name: Projects
   link: projects_index
+- name: Contact
+  link: contact

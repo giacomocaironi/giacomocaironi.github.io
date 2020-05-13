@@ -12,6 +12,25 @@
       </span>
 
       {{ page.content }}
+
+      <div id="disqus_thread"></div>
     </div>
   </div>
+
 {% endblock content %}
+
+{% block js %}
+{{ super() }}
+<script>
+  var disqus_config = function () {
+  this.page.url = window.location.href;
+  this.page.identifier = "{{page.slug}}";
+  };
+  (function() {
+  var d = document, s = d.createElement('script');
+  s.src = 'https://giacomocaironi.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', +new Date());
+  (d.head || d.body).appendChild(s);
+  })();
+</script>
+{% endblock js %}
