@@ -1,5 +1,9 @@
 {% extends "base.html" %}
 
+{% block title %}
+<title>{{site.config.name}}</title>
+{% endblock title %}
+
 {% block css %}
 <link rel="stylesheet" href={{ url("/static/css/index.css") }}>
 {% endblock css %}

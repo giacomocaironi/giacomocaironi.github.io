@@ -1,5 +1,4 @@
 ---
-template: 'minimal.html'
 title: About
 ---
 # About page
