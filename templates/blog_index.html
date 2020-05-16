@@ -17,10 +17,11 @@
     {% endif %}
     <hr>
     <ul id='post-list'>
-      {% for post in page.paginator.posts %}
+      {% for post in page.paginator.objects %}
         {% include "post_front.html" %}
       {% endfor %}
     </ul>
+
     <div id='blog-pagination'>
       {% if page.paginator.previous_page_url %}
         <a class='button button-dark' href="{{ page.paginator.previous_page_url }}">Newer</a>
@@ -33,6 +34,7 @@
         <a class='button button-dark disabled' href="">Older</a>
       {% endif %}
     </div>
+
   </div>
   <div class="col-md-12 col-lg-3">
     {% include "tag_list.html" %}
