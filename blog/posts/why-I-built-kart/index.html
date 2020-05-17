@@ -10,7 +10,9 @@
 
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/css/OverlayScrollbars.min.css">
+
+  <!-- Perfect Scrollbar -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css">
 
   <link rel="stylesheet" href=https://giacomocaironi.github.io/static/css/base.css>
   <link rel="stylesheet" href=https://giacomocaironi.github.io/static/css/main.css>
@@ -28,7 +30,7 @@
 <body>
 
   
-<nav class="navbar navbar-expand-lg navbar-dark bg-main" id='navbar'>
+<nav class="navbar navbar-expand-lg navbar-ligth bg-main" id='navbar'>
   <div class="container">
   <a class="navbar-brand" href="https://giacomocaironi.github.io/"><h2>Giacomo Caironi</h2></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -106,15 +108,18 @@
           
             <a href="https://giacomocaironi.github.io/blog/tags/python/">Python</a>
           
-            <a href="https://giacomocaironi.github.io/blog/tags/kart/">Kart</a>
-          
       </span>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <p><p>A while ago I started studying python web frameworks and I settled with Flask, a very flexible micro-framework. I preferred it over Django because I could have much over control over the way the site was built. However after a while my very simple test site became really intricate, because I needed a new package to have a feature that are required my modern sites. I build a simple site aggregator with Flask, but in the end I wasn't satisfied by the result. Anyway I then tried to build a blog with Flask; however I realized that it was difficult to create a page that could be edited using a WYSIWYG (What you see is what you get) editor. Later I discovered some packages that could render Markdown on the fly in the browser, which is somewhat what I would have liked, but anyway I was committed to something I discovered in that period.</p>
+<p>I first learned about static site generators when I discovered Github Pages. It seemed a fantastic thing, a place where I could host my site for free. I know that there are some services, like Heroku, which can host a python web app for free (with restrictions). However the idea of doing everything in the same platform I used for version control seemed fascinating. So I started to use them. At first I tried out Pelican, a static site generator written in python, which was very appealing because I could use the Jinja2 templates, that I had learned using Flask. However I thought it hadn't enough flexibility, I wasn't able to understand how to make something that was not only a blog. I wanted to create custom collections. So I switched to Jeckyll, because of the ability to create custom collections and the fact that had integration with github pages. And I started writing this site.</p>
+<p>However when tried to introduce pagination in the index page of the blog, I found that first of all it wasn't supported natively by Github Pages. So I learned how to used TravisCI, and then Github Actions, to overcome this challenge. But then I realized that the Jeckyll plugin that managed pagination was a little broken, as it couldn't create the custom urls I wanted. I managed to create something manageable, but it was a very ugly hack. I then looked at Hugo, another popular static site generator which had most of what I wanted, but used a templating engine which I didn't know.</p>
+<p>At this time I started thinking if I could write something that was exactly what I wanted. I thought about the structure for a while and then started thinkering. I literally built the basic skeleton in three days. I created it as a python library and put it on PyPi. I called it Kart, because i like the letter K and because it seemed appropriate, something fast enough and very funny to use.</p>
+<p>Kart is build around the concept of flexibility and pluggability. The main class is responsible only for serving the files, building the folder structure and calling the other part of the library. But the cool part is that you dont' need to use what I have written. You can simply create a custom python class responsible for you precise use case, and then make it callable by the main class. But it works as long as the class has the same methods as the default classes, which are not difficult to implement. My idea for doing this is that no static site generator is tailored for each user. So having a solid base, but letting people insert custom code easily, could help people in my situation.</p>
+<p>Now I want to enter more in the details of Kart. There are three types of classes, responsible for three different things. There are the miners, responsible for getting data out of markdown or YAML files. There are the mappers, the most complicated type, responsible for taking data from the miners and creating a map of the site, assigning the necessary data to each url. And there are the renderers, responsible for taking what is produced by the mappers to render the HTML and saving it to some files. The renderers shouldn't be shouldn't be of much interest, and neither the miners, unless you want to get data from different sources. And I want to stress this fact. Even though I don't need this feature, is something that could be useful for some people, and I havent't found this in other static site generators. But the most important classes are the renderers. I created everything that should serve a normal user, for example everything needed to create a very simple blog, but the coolest thing about them is that they are not restricted to a blog. There is support of custom collections out of the box, like Jeckyll and Hugo, but if you want a custom feature creating a custom class for it shouldn't be too difficult.</p>
+<p>So this is the reason why I build Kart, and why I think it has unique features compared to other static site generators. If you want to learn more about Kart I started writing the documentation as <a href="https://giacomocaironi.github.io/Kart">this link</a>. If you want to help the development of Kart, I would be very thankful!</p>
+</p>
 
-
-      <div id="disqus_thread"></div>
+      <div id="disqus_thread" class='card'></div>
     </div>
   </div>
 
@@ -134,9 +139,9 @@
         <a class="nav-link" href="https://giacomocaironi.github.io/contact/">Contact</a>
         
         
-        <a class="nav-link" href="https://github.com/giacomocaironi"><img class="icon github-icon" src="/static/images/github.png" alt=""></a>
+        <a class="nav-link" href="https://github.com/giacomocaironi"><img id="github-icon" class="icon" src="/static/images/github.png" alt=""></a>
         
-        <a class="nav-link" href="/atom.xml"><img class="icon feed-icon" src="/static/images/feed.png" alt=""></a>
+        <a class="nav-link" href="/atom.xml"><img id="feed-icon" class="icon" src="/static/images/feed.png" alt=""></a>
         
       </div>
 </nav>
@@ -147,6 +152,20 @@
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+  <!-- Perfect Scrollbar -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/perfect-scrollbar.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+      const demo = document.querySelector('html');
+      const ps = new PerfectScrollbar(demo);
+      document.querySelector('#resize').addEventListener('click', () => {
+      width = document.querySelector('#width').value;
+      height = document.querySelector('#height').value;
+      demo.style.width = `${width}px`;
+      demo.style.height = `${height}px`;
+      ps.update();
+      });
+  </script> -->
 
   
 
@@ -164,14 +183,6 @@
   })();
 </script>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/1.12.0/js/jquery.overlayScrollbars.min.js" charset="utf-8"></script>
-
-  <script type="text/javascript">
-    $(function() {
-      $("html").overlayScrollbars({ });
-    });
-  </script>
 
 </body>
 </html>

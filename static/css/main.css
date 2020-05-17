@@ -1,68 +1,73 @@
+:root {
+  --main-color: #23303B;
+  --secondary-color: #AED3F2;
+  --link-color: #385D84;
+}
+
 .bg-main{
-  background-color: #343a40;
+  background-color: var(--main-color);
 }
 
-.navbar, .footer{
-  font-size: 125%;
+.nav-link, .nav-link:hover{
+  color: var(--secondary-color);
 }
 
-.nav-link{
-  color: rgba(255, 255, 255, 0.5);
-  padding: 0.5rem;
-  margin: auto;
+.navbar-brand, .navbar-brand:hover{
+  color: var(--secondary-color);
 }
 
-.nav-link.active{
-  color: white;
-}
-
-.nav-link:hover{
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
-}
-
-.nav-title{
-  color: white;
-  font-size: 1.8em;
-  margin: auto;
-}
-
-.nav-title:hover{
-  color: rgba(255, 255, 255, 0.75);
-  text-decoration: none;
+.button-dark{
+  color: var(--primary-color);
+  background-color: transparent;
 }
 
 .button-dark:hover{
-  color: white;
-  background-color: #343a40;
+  color: #ffffff;
+  background-color: var(--main-color);
 }
 
-.disabled:hover{
-  color: black;
-  background-color: white;
+a, a:hover{
+  color: var(--link-color);
 }
 
-.align-center{
-  margin: auto;
+.navbar, .navbar-toggler {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(242,163,101, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
+
+.project-card {
+  color: #fff;
+}
+
+.project-card a{
+  color: var(--secondary-color);
 }
 
 #tag-list{
   margin-bottom: 1rem;
   padding: 1rem;
+  list-style-type: none;
+  color: #fff;
+}
+
+#tag-list a{
+  color: var(--secondary-color);
 }
 
 #main-post{
   color: #fff;
   padding: .5rem;
   padding-top: 1rem;
-  /* margin-right: -1rem; */
-  /* margin-left: -1rem; */
   margin-bottom: 2rem;
   border-radius: 1rem;
 }
 
 #main-post a{
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 #post-list{
@@ -79,10 +84,15 @@
   height: 30px;
 }
 
-.feed-icon{
+#feed-icon{
   width: 30px;
 }
 
-.github-icon{
+#github-icon{
   width: 37px;
+}
+
+#disqus_thread{
+  margin-left: -0.15rem;
+  margin-right: -0.15rem;
 }
