@@ -1,35 +1,61 @@
+:root {
+  --main-color: #23303B;
+  --secondary-color: #AED3F2;
+  --link-color: #385D84;
+}
+
 .bg-main{
-  background-color: #343a40;
+  background-color: var(--main-color);
 }
 
 .nav-link, .nav-link:hover{
-  color: white;
+  color: var(--secondary-color);
 }
 
 .navbar-brand, .navbar-brand:hover{
-  color: white;
+  color: var(--secondary-color);
+}
+
+.button-dark{
+  color: var(--primary-color);
+  background-color: transparent;
 }
 
 .button-dark:hover{
-  color: white;
-  background-color: #343a40;
+  color: #ffffff;
+  background-color: var(--main-color);
 }
 
 a, a:hover{
-  color: black;
+  color: var(--link-color);
 }
 
+.navbar, .navbar-toggler {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
 
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(174,211,242, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e")
+}
 
+.project-card {
+  color: #fff;
+}
 
-
-
-
-
+.project-card a{
+  color: var(--secondary-color);
+}
 
 #tag-list{
   margin-bottom: 1rem;
   padding: 1rem;
+  list-style-type: none;
+  color: #fff;
+}
+
+#tag-list a{
+  color: var(--secondary-color);
 }
 
 #main-post{
@@ -41,7 +67,7 @@ a, a:hover{
 }
 
 #main-post a{
-  color: #fff;
+  color: var(--secondary-color);
 }
 
 #post-list{

@@ -50,7 +50,7 @@ body{
 
 a{
   text-decoration: none;
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 a:hover{
@@ -59,13 +59,13 @@ a:hover{
 }
 
 .nav-link{
-  opacity: 0.5;
+  opacity: 0.6;
   padding: 0.5rem;
   margin: auto;
 }
 
 .nav-link.active{
-  opacity: 0.75;
+  opacity: 0.8;
 }
 
 .nav-link:hover{
