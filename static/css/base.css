@@ -50,27 +50,31 @@ body{
 
 a{
   text-decoration: none;
-  opacity: 0.8;
+  /* opacity: 0.8; */
+}
+
+p a {
+  font-weight: bold;
 }
 
 a:hover{
   /* text-decoration: none; */
-  opacity: 1;
+  /* opacity: 1; */
 }
 
 .nav-link{
-  opacity: 0.6;
+  /* opacity: 0.6; */
   padding: 0.5rem;
   margin: auto;
 }
 
 .nav-link.active{
-  opacity: 0.8;
+  /* opacity: 0.8; */
 }
 
-.nav-link:hover{
-  opacity: 1;
-  text-decoration: none;
+.nav-link:hover, .navbar-brand:hover{
+  /* opacity: 1; */
+  text-decoration: underline;
 }
 
 
