@@ -5,6 +5,7 @@ author: Giacomo Caironi
 tags:
   - python
 draft: False
+description: This is the description
 ---
 A while ago I started studying python web frameworks and I settled with Flask, a very flexible micro-framework. I preferred it over Django because I could have much over control over the way the site was built. However after a while my very simple test site became really intricate, because I needed a new package to have a feature that are required my modern sites. I build a simple site aggregator with Flask, but in the end I wasn't satisfied by the result. Anyway I then tried to build a blog with Flask; however I realized that it was difficult to create a page that could be edited using a WYSIWYG (What you see is what you get) editor. Later I discovered some packages that could render Markdown on the fly in the browser, which is somewhat what I would have liked, but anyway I was committed to something I discovered in that period.
 

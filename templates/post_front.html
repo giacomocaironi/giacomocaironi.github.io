@@ -8,7 +8,7 @@
           <a href="{{ url("tags." + tag + ".1") }}">{{ (site.tags|selectattr('slug', 'equalto', tag)|list|first).name }}</a>
         {% endfor %}
     </span>
-    <p>{{ post.short_content }}</p>
+    <p>{{ post.description }}</p>
   </div>
 </li>
 <hr>
