@@ -1,0 +1,6 @@
+<div class="card tag-cloud">
+  <a class="tag-cloud-title" href="{{ SITEURL }}/{{TAGS_SAVE_AS}}"><h4>Tags</h4></a>
+  {%- for tag, articles in tags|sort %}
+      <span><a class="" href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> ({{ articles|count }})</span>
+  {% endfor %}
+</div>
