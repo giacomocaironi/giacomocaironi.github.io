@@ -94,6 +94,10 @@ a, a:hover{
   margin-bottom: 1rem;
 }
 
+#blog-pagination {
+  margin-bottom: 1rem;
+}
+
 .icon{
   height: 30px;
 }
