@@ -13,11 +13,17 @@ def tag_dict(site):
 
 
 kart.miners = [
-    miners.DefaultPostMiner("posts"),
+    miners.DefaultCollectionMiner("posts"),
     miners.DefaultCollectionMiner("tags"),
     miners.DefaultCollectionMiner("projects"),
     miners.DefaultDataMiner(),
     miners.DefaultPageMiner(),
+]
+
+kart.modifiers = [
+    modifiers.TagModifier(),
+    modifiers.RuleModifier([tag_dict]),
+    modifiers.CollectionSorter("posts", "date", True),
 ]
 
 kart.mappers = [
@@ -26,10 +32,7 @@ kart.mappers = [
         collection_name="projects", template="project.html"
     ),
     mappers.DefaultPageMapper(),
-    mappers.DefaultFeedMapper(),
 ]
-
-kart.modifiers = [modifiers.TagModifier(), modifiers.RuleModifier([tag_dict])]
 
 kart.renderers = [
     renderers.DefaultSiteRenderer(),

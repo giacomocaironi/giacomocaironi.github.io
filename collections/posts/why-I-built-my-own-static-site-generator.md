@@ -15,7 +15,7 @@ I first thought about building my own site when I started looking to python web 
 
 I first learned about them when I discovered Github Pages. It seemed a fantastic thing, a place where I could host my site for free. I know that there are some services, like Heroku, which can host a python web app for free (with restrictions). However the idea of doing everything in the same platform I use for version control seemed fascinating. So I started using it.
 
-## An brief look at some static site generators
+## A brief look at some static site generators
 
 At first I tried out Pelican, a static site generator written in python, which was very appealing because I could use the Jinja2 templates, that I had learned using Flask. However I thought it hadn't enough flexibility, I wasn't able to understand how to make something that was not only a blog. I wanted to create custom collections.
 

@@ -28,18 +28,21 @@
 
   <link rel="stylesheet" href={{ url("/static/css/base.css") }}>
   <link rel="stylesheet" href={{ url("/static/css/main.css") }}>
+  <link rel="stylesheet" href={{ url("/static/css/toc.css") }}>
 
   <link rel="apple-touch-icon" sizes="180x180" href={{ url("/apple-touch-icon.png") }}>
   <link rel="icon" type="image/png" sizes="32x32" href={{ url("/favicon-32x32.png") }}>
   <link rel="icon" type="image/png" sizes="16x16" href={{ url("/favicon-16x16.png") }}>
   <link rel="manifest" href={{ url("/site.webmanifest") }}>
 
+
+
   {% block css %}
   {% endblock css %}
 
 </head>
 
-<body>
+<body data-spy="scroll" data-target="#toc"></body>
 
   {% block main %}
     {{page.content}}
@@ -51,20 +54,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
-  <!-- Perfect Scrollbar -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/perfect-scrollbar.min.js" charset="utf-8"></script>
-  <script type="text/javascript">
-      const demo = document.querySelector('html');
-      const ps = new PerfectScrollbar(demo);
-      document.querySelector('#resize').addEventListener('click', () => {
-      width = document.querySelector('#width').value;
-      height = document.querySelector('#height').value;
-      demo.style.width = `${width}px`;
-      demo.style.height = `${height}px`;
-      ps.update();
-      });
-  </script> -->
-
+  <script src="{{ url("/static/javascript/toc.js") }}"></script>
   {% block js %}
   {% endblock js %}
 
