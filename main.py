@@ -4,7 +4,7 @@ from kart import miners, mappers, renderers, modifiers
 kart = Kart()
 
 
-def tag_dict(site):
+def tag_post_count(site):
     site["tag_post_count"] = {}
     for tag in site["tags"]:
         posts = site["posts"]
@@ -20,10 +20,11 @@ kart.miners = [
     miners.DefaultPageMiner(),
 ]
 
-kart.modifiers = [
+kart.content_modifiers = [
     modifiers.TagModifier(),
-    modifiers.RuleModifier([tag_dict]),
+    modifiers.RuleContentModifier([tag_post_count]),
     modifiers.CollectionSorter("posts", "date", True),
+    modifiers.CollectionSorter("tags", "name"),
 ]
 
 kart.mappers = [
@@ -32,12 +33,39 @@ kart.mappers = [
         collection_name="projects", template="project.html"
     ),
     mappers.DefaultPageMapper(),
+    mappers.DefaultFeedMapper(collections=["posts", "projects"]),
+    mappers.ManualMapper(
+        {
+            "sitemap": {
+                "url": "/sitemap.xml",
+                "data": {},
+                "template": "",
+                "renderer": "default_sitemap_renderer",
+            },
+            "static": {
+                "url": "/static/*",
+                "data": {},
+                "template": "",
+                "renderer": "default_static_files_renderer",
+            },
+            "root": {
+                "url": "/*",
+                "data": {},
+                "template": "",
+                "renderer": "default_root_dir_renderer",
+            },
+        }
+    ),
 ]
+
+kart.map_modifiers = []
 
 kart.renderers = [
     renderers.DefaultSiteRenderer(),
-    renderers.DefaultFeedRenderer(collections=["posts", "projects"]),
+    renderers.DefaultFeedRenderer(),
     renderers.DefaultSitemapRenderer(),
+    renderers.DefaultStaticFilesRenderer(),
+    renderers.DefaultRootDirRenderer(),
 ]
 
 kart.config["name"] = "Giacomo Caironi"

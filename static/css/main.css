@@ -114,3 +114,9 @@ a, a:hover{
   margin-left: -0.15rem;
   margin-right: -0.15rem;
 }
+
+.highlight {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
