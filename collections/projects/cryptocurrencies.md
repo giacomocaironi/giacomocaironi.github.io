@@ -13,4 +13,4 @@ Btclib is a library developed by [Ferdinando Ametrano](https://ametrano.net), th
 
 ## toykoin
 
-[Toykoin](https://github.com/giacomocaironi/toykoin) is, as the name suggests, a toy cryptocurrency. I developed it to learn about the entire stack of a cryptocurrency node structure. It is still in beta, but I plan on using it as material for a crash course about implementing a blockchain from scratch in python.
+[Toykoin](https://github.com/giacomocaironi/toykoin) is, as the name suggests, a toy cryptocurrency. I developed it to understand about the inner functioning of a cryptocurrency node. It is still in beta, but I plan on using it as material for a crash course about implementing a blockchain from scratch in python.
