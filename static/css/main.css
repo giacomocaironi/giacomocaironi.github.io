@@ -120,3 +120,7 @@ a, a:hover{
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
+
+.highlight pre {
+  margin-bottom: 0;
+}
