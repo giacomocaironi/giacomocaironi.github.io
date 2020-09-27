@@ -21,7 +21,6 @@ kart.miners = [
 ]
 
 kart.content_modifiers = [
-    modifiers.TagModifier(),
     modifiers.RuleContentModifier([tag_post_count]),
     modifiers.CollectionSorter("posts", "date", True),
     modifiers.CollectionSorter("tags", "name"),

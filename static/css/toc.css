@@ -59,7 +59,7 @@ nav[data-toggle="toc"] .nav-link.active + ul {
   display: block;
 }#sidebar-toc {
   position: sticky;
-  top: 3rem;
+  top: 2rem;
 }
 
 #sidebar-toc ul {
