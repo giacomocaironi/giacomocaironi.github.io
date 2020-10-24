@@ -7,15 +7,40 @@
 {% block content %}
 
 <h1>{{page.title}}</h1>
-<div class="row">
-  {% for project in site.projects %}
-    <div class="col-12 col-lg-4 col-md-6 mb-3 mt-3 d-flex">
-      <div class="card project-card m-0 bg-main">
-        <h2><a href="{{ url('projects.' + project.slug) }}">{{ project.name }}</a></h2>
-        <p>{{ project.description }}</p>
+
+<div class="">
+  {% for category in site.project_categories %}
+    {% set projects = site.projects|selectattr('category', 'equalto', category.slug)|list %}
+    {% if projects %}
+
+    <div class="card">
+
+      <div class="card-header">
+        <a href="#block-{{loop.index}}" data-toggle='collapse' aria-expanded="true" aria-controls="block-{{loop.index}}">
+          <h2>{{ category.name }}</h2>
+        </a>
+        {{ category.content }}
       </div>
+
+      <div id='block-{{loop.index}}' class="collapse">
+        <div class="card-block">
+          {% for project in projects %}
+            <div class="">
+              <h3><a href="{{ url('projects.' + project.slug) }}">{{ project.name }}</a></h3>
+              <p>{{ project.description }}</p>
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+
     </div>
+
+    {% endif %}
   {% endfor %}
 </div>
 
 {% endblock content %}
+
+{% block css %}
+<link rel="stylesheet" href={{ url("/static/css/projects.css") }}>
+{% endblock css %}

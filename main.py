@@ -16,6 +16,7 @@ kart.miners = [
     miners.DefaultCollectionMiner("posts"),
     miners.DefaultCollectionMiner("tags"),
     miners.DefaultCollectionMiner("projects"),
+    miners.DefaultCollectionMiner("project_categories"),
     miners.DefaultDataMiner(),
     miners.DefaultPageMiner(),
 ]
@@ -24,6 +25,7 @@ kart.content_modifiers = [
     modifiers.RuleContentModifier([tag_post_count]),
     modifiers.CollectionSorter("posts", "date", True),
     modifiers.CollectionSorter("tags", "name"),
+    modifiers.CollectionSorter("project_categories", "name"),
 ]
 
 kart.mappers = [
