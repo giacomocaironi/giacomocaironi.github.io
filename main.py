@@ -6,8 +6,8 @@ kart = Kart()
 
 def tag_post_count(site):
     site["tag_post_count"] = {}
-    for tag in site["tags"]:
-        posts = site["posts"]
+    for tag in site["tags"].values():
+        posts = site["posts"].values()
         post_num = len([post for post in posts if tag["slug"] in post["tags"]])
         site["tag_post_count"][tag["slug"]] = post_num
 
@@ -25,7 +25,7 @@ kart.content_modifiers = [
     modifiers.RuleContentModifier([tag_post_count]),
     modifiers.CollectionSorter("posts", "date", True),
     modifiers.CollectionSorter("tags", "name"),
-    modifiers.CollectionSorter("project_categories", "name"),
+    modifiers.CollectionSorter("project_categories", "index"),
 ]
 
 kart.mappers = [
