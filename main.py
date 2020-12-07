@@ -6,8 +6,8 @@ kart = Kart()
 
 def tag_post_count(site):
     site["tag_post_count"] = {}
-    for tag in site["tags"].values():
-        posts = site["posts"].values()
+    for tag in site["tags"]:
+        posts = site["posts"]
         post_num = len([post for post in posts if tag["slug"] in post["tags"]])
         site["tag_post_count"][tag["slug"]] = post_num
 
