@@ -9,8 +9,8 @@
 <h1>{{page.title}}</h1>
 
 <div class="">
-  {% for category in site.project_categories %}
-    {% set projects = site.projects|selectattr('category', 'equalto', category.slug)|list %}
+  {% for category in site.project_categories.values() %}
+    {% set projects = site.projects.values()|list|selectattr('category', 'equalto', category.slug)|list %}
     {% if projects %}
 
     <div class="card">
@@ -19,7 +19,7 @@
         <a href="#block-{{loop.index}}" data-toggle='collapse' aria-expanded="true" aria-controls="block-{{loop.index}}">
           <h2>{{ category.name }}</h2>
         </a>
-        {{ category.content }}
+        {{ category.content|markdown }}
       </div>
 
       <div id='block-{{loop.index}}' class="collapse">

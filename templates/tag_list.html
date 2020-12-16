@@ -1,7 +1,7 @@
 <div id="tag-list" class='card bg-main'>
   <h2>Tags</h2>
   <ul>
-    {% for tag in site.tags %}
+    {% for tag in site.tags.values() %}
     <li><a href="{{ url('tags.' + tag.slug + '.1') }}">{{site.tag_post_count[tag.slug]}}) {{tag.name}}</a></li>
     {% endfor %}
   </ul>

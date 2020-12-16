@@ -5,6 +5,6 @@
 - name: Contact
   link: contact
 - name: Blog
-  link: blog_index
+  link: posts_index
 - name: Projects
   link: projects_index

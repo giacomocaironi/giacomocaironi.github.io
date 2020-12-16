@@ -1,11 +1,11 @@
 <li>
   <div class="post-front">
     <h2><a href="{{ url("posts." + post.slug) }}">{{ post.title }}</a></h2>
-    <span>{{ date_to_string(post.date) }}</span>
+    <span>{{ post.date|date_to_string }}</span>
     <span style='float:right'>
       Tags:
         {% for tag_slug in post.tags %}
-        {% set tag = site.tags|selectattr('slug', 'equalto', tag_slug)|first %}
+          {% set tag = site.tags[tag_slug] %}
           <a href="{{ url("tags." + tag_slug + ".1") }}">{{tag.name}}</a>
         {% endfor %}
     </span>

@@ -46,7 +46,7 @@
 <body data-spy="scroll" data-target="#toc"></body>
 
   {% block main %}
-    {{page.content}}
+    {{page.content|markdown}}
   {% endblock main %}
 
   <!-- Optional JavaScript -->

@@ -16,8 +16,9 @@
 
   <div class="bg-main" id='main-post'>
     <div class="col-lg-8 col-md-8 col-12">
-      <h1><a href="{{ url("posts." + site.posts[0].slug) }}">{{ site.posts[0].title }}</a></h1>
-      <p>{{ site.posts[0].description }}</p>
+      {% set first_post = site.posts.values()|list|first %}
+      <h1><a href="{{ url("posts." + first_post.slug) }}">{{ first_post.title }}</a></h1>
+      <p>{{ first_post.description }}</p>
     </div>
   </div>
 
@@ -32,7 +33,7 @@
       {% endfor %}
     </ol>
       <div class="carousel-inner" role="listbox">
-          {% for project in site.projects %}
+          {% for project in site.projects.values()|list %}
           <div class="carousel-item {%if loop.index == 1%}active{%endif%}">
             <div class="">
               <a href="{{ url('projects', project.slug) }}"><h3 class="h3-responsive">{{project.name}}</h3></a>
